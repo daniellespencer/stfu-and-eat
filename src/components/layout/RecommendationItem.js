@@ -18,8 +18,8 @@ const RecommendationItem = () => {
                 <Card.Body>
                     <Card.Title>Restaurant Name</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    Neighborhood<br/>
+                    Cuisine
                     </Card.Text>
                     <Button variant="primary" className='btn-success' onClick={onClick}>Restaurant website</Button>
                 </Card.Body>
