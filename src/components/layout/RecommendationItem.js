@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
 
-const RecommendationItem = () => {
+const RecommendationItem = ({ props }) => {
+    const [results, updateResults] = useState({});
+
+    const updateRestaurant = () => {
+        updateResults({})
+
+    }
+    useEffect(() => {
+        fetch('restaurant-recommendation', {
+            headers: {
+                'Content-Type': 'application/json',
+                "Accept": 'application/json'
+            }
+        })
+        .then(response => response.json().then(data => {
+            updateResults(data.result)
+            console.log(data.result.address)
+            })
+            
+        );
+    }, []);
 
     const onClick = () => {
         const url = 'http://lonaslileats.com/';
