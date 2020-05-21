@@ -27,7 +27,7 @@ const RecommendationItem = ({ props }) => {
     }, []);
 
     const onClick = () => {
-        const url = 'http://lonaslileats.com/';
+        const url = results.website;
         window.open(url, '_blank')
     }
 
@@ -36,10 +36,10 @@ const RecommendationItem = ({ props }) => {
             <Card className='shadow mb-5 mt-5 '>
                 <Card.Img variant="top" src={require("../../images/rec-card-default.jpg")} className='img-fluid'  />
                 <Card.Body>
-                    <Card.Title>Restaurant Name</Card.Title>
+                <Card.Title>{results.name}</Card.Title>
                     <Card.Text>
-                    Neighborhood<br/>
-                    Cuisine
+                    Neighborhood: {results.neighborhood} <br/>
+                    Cuisine: {results.cuisine}
                     </Card.Text>
                     <Button variant="primary" className='btn-success' onClick={onClick}>Restaurant website</Button>
                 </Card.Body>
