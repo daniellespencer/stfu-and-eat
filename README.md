@@ -42,8 +42,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 
 =======
-App Info
-Authors
+### App Info
+
+Authors:
+
 Mariah Lighfoot & Danielle Spencer
 
 Version
@@ -52,7 +54,7 @@ Version
 License
 This project is licensed under the MIT License
 
-Overview
+### Overview
 
 We have all been there. With a group of friends, starving, but no one can make a decision.
 Should we get Thai? or pizza? 
