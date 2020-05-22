@@ -45,7 +45,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### App Info
 
 Authors:
-
 Mariah Lighfoot & Danielle Spencer
 
 Version
