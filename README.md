@@ -12,14 +12,14 @@ Hit the "Let's Eat!" button and your culinary journey begins.
 Have more time? Feel free to browse through our full list of restaurants.
 
 ## Installation
-```npm install```
-```pip install --user pipenv```
-```pipenv shell```
-```pipenv install -d```
+```npm install``` <br>
+```pip install --user pipenv``` <br>
+```pipenv shell``` <br>
+```pipenv install -d``` <br>
 
 ## Usage
-```npm start```
-```python app.py```
+```npm start``` <br>
+```python app.py``` <br>
 
 ## App Info
 Authors:
