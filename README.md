@@ -29,5 +29,7 @@ Version
 1.0.0
 
 ## License
-This project is licensed under the MIT License
+This project is licensed under the <a href="https://choosealicense.com/licenses/mit/" target="_top">MIT</a> License
+
+
 
