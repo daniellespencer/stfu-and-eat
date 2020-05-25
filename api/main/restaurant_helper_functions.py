@@ -1,6 +1,6 @@
 import random
 
-from api.main.db import restaurants
+from db import restaurants
 
 def organize_restaurant_output():
     output = []
