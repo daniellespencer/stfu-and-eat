@@ -1,8 +1,8 @@
 import pytest
 
-from app.main.restaurant_helper_functions import organize_restaurant_output, select_random_restaurant
-from app.main.app import app
-from app.main.db import restaurants
+from api.main.restaurant_helper_functions import organize_restaurant_output, select_random_restaurant
+from api.main.routes import app
+from api.main.db import restaurants
 
 def test_organize_restaurant_output_returns_expected_keys():
     with app.app_context():

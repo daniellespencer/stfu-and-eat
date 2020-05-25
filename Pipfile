@@ -10,6 +10,7 @@ pylint = "*"
 flask = "*"
 pymongo = {extras = ["srv"],version = "*"}
 pytest = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.8"
