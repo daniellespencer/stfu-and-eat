@@ -2,7 +2,7 @@ import random
 
 from app.main.db import restaurants
 
-def organizeRestaurantOutput():
+def organize_restaurant_output():
     output = []
 
     for q in restaurants.find():
@@ -17,6 +17,6 @@ def organizeRestaurantOutput():
 
     return output
 
-def selectRandomRestaurant(restaurantChoices):
-    value = random.randint(0, len(restaurantChoices)-1)
-    return restaurantChoices[value]
+def select_random_restaurant(options):
+    value = random.randint(0, len(options)-1)
+    return options[value]
