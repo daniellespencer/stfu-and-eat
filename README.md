@@ -24,6 +24,7 @@ Have more time? Feel free to browse through our full list of restaurants.
 ## Testing
 With Coverage <br>
 ```pytest --cov-report term-missing --cov=api/main/ api/tests``` <br>
+<br>
 Without Coverage <br>
 ```pytest app/tests/file_name```
 
