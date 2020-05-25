@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from restaurants import organizeRestaurantOutput, selectRandomRestaurant
+from resources.restaurants import organizeRestaurantOutput, selectRandomRestaurant
 
 app = Flask(__name__)
 
