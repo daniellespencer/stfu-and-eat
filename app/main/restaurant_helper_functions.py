@@ -1,5 +1,5 @@
 import random
-from db import restaurants
+from app.main.db import restaurants
 
 def organizeRestaurantOutput():
     output = []
