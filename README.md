@@ -19,7 +19,13 @@ Have more time? Feel free to browse through our full list of restaurants.
 
 ## Usage
 ```npm start``` <br>
-```python app.py``` <br>
+```python routes.py``` <br>
+
+## Testing
+### With Coverage
+```pytest --cov-report term-missing --cov=api/main/ api/tests```
+### Without Coverage
+```pytest app/tests/test_restaurant_helper_functions.py -s```
 
 ## App Info
 Authors:
