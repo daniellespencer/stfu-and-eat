@@ -22,10 +22,10 @@ Have more time? Feel free to browse through our full list of restaurants.
 ```python routes.py``` <br>
 
 ## Testing
-### With Coverage
+With Coverage
 ```pytest --cov-report term-missing --cov=api/main/ api/tests```
-### Without Coverage
-```pytest app/tests/test_restaurant_helper_functions.py -s```
+Without Coverage
+```pytest app/tests/file_name```
 
 ## App Info
 Authors:
