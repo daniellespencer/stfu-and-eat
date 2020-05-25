@@ -1,4 +1,5 @@
 import random
+
 from app.main.db import restaurants
 
 def organizeRestaurantOutput():
