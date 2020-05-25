@@ -2,20 +2,20 @@ import React, { Fragment } from 'react';
 import { Jumbotron, Container } from 'react-bootstrap';
 import RecommendationItem from './RecommendationItem';
 
-const Recommendation = () => {
+const RestaurantList = () => {
     return (
         <Fragment>
-        <Jumbotron fluid >
+            <Jumbotron fluid className='listBanner' >
             <Container >
-                <h1>Our Recommendation</h1>
-                <p>
-                We did it. We made a decision for you.
-                </p>
+                <h1>Our List</h1>
+               
             </Container>
         </Jumbotron>
+
         <RecommendationItem />
+        
         </Fragment>
     )
 }
 
-export default Recommendation
+export default RestaurantList
