@@ -26,7 +26,7 @@ With Coverage <br>
 ```pytest --cov-report term-missing --cov=api/main/ api/tests``` <br>
 <br>
 Without Coverage <br>
-```pytest app/tests/file_name```
+```pytest api/tests/file_name```
 
 ## App Info
 Authors:
