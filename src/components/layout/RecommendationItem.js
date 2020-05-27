@@ -5,17 +5,12 @@ import { Card, Button } from 'react-bootstrap';
 
 
 const RecommendationItem = ({ props }) => {
-    const [results, updateResults] = useState({});
+    const [results, updateResults] = useState([]);
     // eslint-disable-next-line
-    const updateRestaurant = () => {
-        
-        updateResults({})
-        
-    }
+    
     useEffect(() => {
         fetch('restaurant-recommendation', {
             headers: {
-                'Content-Type': 'application/json',
                 "Accept": 'application/json'
             }
         })
