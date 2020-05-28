@@ -30,7 +30,7 @@ const RestaurantList = () => {
         </Jumbotron>
         <Fragment>
             {results.map(restaurant => (
-                <RecommendationItem key={results.id} results={results} name={results.name} neighborhood={results.neighborhood} />
+                <RecommendationItem key={restaurant.id} restaurant={restaurant}  />
             ))}
         </Fragment>
         
