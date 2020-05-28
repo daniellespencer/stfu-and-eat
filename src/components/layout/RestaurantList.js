@@ -14,10 +14,12 @@ const RestaurantList = () => {
         .then(response => response.json().then(data => {
             updateResults(data.result)
             console.log(data.result)
+            console.log(results)
+            console.log(results.name)
             })
             
         );
-    }, [updateResults]);
+    }, []);
     return (
         <Fragment>
             <Jumbotron fluid className='listBanner' >
@@ -28,7 +30,7 @@ const RestaurantList = () => {
         </Jumbotron>
         <Fragment>
             {results.map(restaurant => (
-                <RecommendationItem key={results.id} name={results.name} neighborhood={results.neighborhood} cuisine={results.cuisine} url={results.website} />
+                <RecommendationItem key={results.id} results={results} name={results.name} neighborhood={results.neighborhood} />
             ))}
         </Fragment>
         

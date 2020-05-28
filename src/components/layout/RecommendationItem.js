@@ -1,27 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+
 import { Card, Button } from 'react-bootstrap';
 
-
-
-
-const RecommendationItem = ({ props }) => {
-    const [results, updateResults] = useState([]);
-    // eslint-disable-next-line
+const RecommendationItem = ({ results }) => {
     
-    useEffect(() => {
-        fetch('restaurant-recommendation', {
-            headers: {
-                "Accept": 'application/json'
-            }
-        })
-        .then(response => response.json().then(data => {
-            updateResults(data.result)
-            console.log(data.result.address)
-            })
-            
-        );
-    }, []);
-
     const onClick = () => {
         const url = results.website;
         window.open(url, '_blank')
