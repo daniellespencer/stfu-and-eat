@@ -1,8 +1,27 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Jumbotron, Container } from 'react-bootstrap';
-import RecommendationItem from './RecommendationItem'
+import RecommendationItem from './RecommendationItem';
 
-const Recommendation = () => {
+const Recommendation = (props) => {
+
+    const [restaurant, updateResults] = useState([]);
+    // eslint-disable-next-line
+    
+    useEffect(() => {
+        fetch('restaurant-recommendation', {
+            headers: {
+                "Accept": 'application/json'
+            }
+        })
+        .then(response => response.json().then(data => {
+            updateResults(data.result)
+            
+            
+            })
+            
+        );
+    }, []);
+
     return (
         <Fragment>
         <Jumbotron fluid >
@@ -13,7 +32,7 @@ const Recommendation = () => {
                 </p>
             </Container>
         </Jumbotron>
-        <RecommendationItem />
+        <RecommendationItem restaurant={restaurant}  />
         </Fragment>
     )
 }

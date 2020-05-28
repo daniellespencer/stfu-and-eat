@@ -127,6 +127,16 @@ img {
   color: #fff;
 }
 
+.listBanner {
+  background-image: url('./images/list-banner.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  color: #fff;
+}
+
 
 .card {
   justify-content: center;
