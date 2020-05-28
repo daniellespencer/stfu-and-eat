@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { Jumbotron, Container } from 'react-bootstrap';
+import { Jumbotron, Container, Row } from 'react-bootstrap';
 import RecommendationItem from './RecommendationItem';
 
 const RestaurantList = () => {
@@ -28,11 +28,13 @@ const RestaurantList = () => {
                
             </Container>
         </Jumbotron>
-        <Fragment>
-            {results.map(restaurant => (
-                <RecommendationItem key={restaurant.id} restaurant={restaurant}  />
-            ))}
-        </Fragment>
+        <Container >
+            <Row className="justify-content-sm-center" md={3} xs={1}>
+                {results.map(restaurant => (
+                    <RecommendationItem key={restaurant.id} restaurant={restaurant}  />
+                ))}
+            </Row>
+        </Container>
         
         </Fragment>
     )

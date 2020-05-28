@@ -4,7 +4,7 @@ import RecommendationItem from './RecommendationItem';
 
 const Recommendation = (props) => {
 
-    const [results, updateResults] = useState([]);
+    const [restaurant, updateResults] = useState([]);
     // eslint-disable-next-line
     
     useEffect(() => {
@@ -32,7 +32,7 @@ const Recommendation = (props) => {
                 </p>
             </Container>
         </Jumbotron>
-        <RecommendationItem results={results}  />
+        <RecommendationItem restaurant={restaurant}  />
         </Fragment>
     )
 }
