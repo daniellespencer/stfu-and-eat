@@ -1,7 +1,7 @@
 import pytest
 
 from api.routes import app, get_all_restaurants, get_restaurant_recommendation
-from api.db import restaurants
+from api.config import restaurant_collection as restaurants
 
 def test_get_all_restaurants_returns_status_code_200():
     with app.app_context():

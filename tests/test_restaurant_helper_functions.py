@@ -2,7 +2,7 @@ import pytest
 
 from api.restaurant_helper_functions import organize_restaurant_output, select_random_restaurant
 from api.routes import app
-from api.db import restaurants
+from api.config import restaurant_collection as restaurants
 
 def test_organize_restaurant_output_returns_expected_keys():
     with app.app_context():
