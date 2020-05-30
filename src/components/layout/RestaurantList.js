@@ -1,9 +1,12 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react'; 
 import { Jumbotron, Container, Row } from 'react-bootstrap';
 import RecommendationItem from './RecommendationItem';
 
 const RestaurantList = () => {
     const [results, updateResults] = useState([]);
+
+    const [search, setSearch] = useState('');
+    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     useEffect(() => {
         fetch('restaurants', {
@@ -13,13 +16,19 @@ const RestaurantList = () => {
         })
         .then(response => response.json().then(data => {
             updateResults(data.result)
-            console.log(data.result)
-            console.log(results)
-            console.log(results.name)
             })
             
         );
     }, []);
+
+    useEffect(() => {
+        setFilteredRestaurants(
+            results.filter( restaurant => {
+                return restaurant.name.toLowerCase().includes(search.toLowerCase() )
+            } )
+        )
+      }, [search, results]);
+
     return (
         <Fragment>
             <Jumbotron fluid className='listBanner' >
@@ -28,9 +37,17 @@ const RestaurantList = () => {
                
             </Container>
         </Jumbotron>
+        
         <Container >
+            <input
+                type="text"
+                placeholder="Search our list of restaurants ..."
+                className="form-control"
+                onChange={e => setSearch(e.target.value)}
+            /> 
+           
             <Row className="justify-content-sm-center" md={3} xs={1}>
-                {results.map(restaurant => (
+                {filteredRestaurants.map(restaurant => (
                     <RecommendationItem key={restaurant.id} restaurant={restaurant}  />
                 ))}
             </Row>
