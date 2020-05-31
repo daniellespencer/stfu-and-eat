@@ -95,7 +95,7 @@ img {
   justify-content: center;
   text-align: center;
   font-weight: bold;
-  padding-top: 100px;
+  padding-top: 55px;
 }
 
 .jumbotron {
@@ -177,6 +177,7 @@ img {
 .lead  {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .text-center {
