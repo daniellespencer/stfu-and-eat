@@ -11,6 +11,10 @@ flask = "*"
 pymongo = {extras = ["srv"],version = "*"}
 pytest = "*"
 pytest-cov = "*"
+bcrypt = "*"
+flask-cors = "*"
+flask-bcrypt = "*"
+flask-jwt-extended = "*"
 
 [requires]
 python_version = "3.8"
