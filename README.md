@@ -19,14 +19,15 @@ Have more time? Feel free to browse through our full list of restaurants.
 
 ## Usage
 ```npm start``` <br>
+```export PYTHONPATH=.``` <br>
 ```python routes.py``` <br>
 
 ## Testing
 With Coverage <br>
-```pytest --cov-report term-missing --cov=api/main/ api/tests``` <br>
+```pytest --cov-report term-missing --cov=api tests/``` <br>
 <br>
 Without Coverage <br>
-```pytest api/tests/file_name```
+```pytest tests/ -v- ```
 
 ## App Info
 Authors:
