@@ -26,16 +26,16 @@ def register():
     password = bcrypt.generate_password_hash(request.get_json()['password']).decode('utf-8')
     created = datetime.utcnow()
 
-    user_id = users.insert(
-        # {"email" : email},
+    user_id = users.update(
+        {"email" : email},
         {
             'first_name' : first_name,
             'last_name' : last_name,
             'email' : email,
             'password' : password,
             'created' : created
-        }
-        # upsert=True
+        },
+        upsert=True
     )
 
     new_user = users.find_one({'_id' : user_id})
