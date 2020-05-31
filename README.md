@@ -27,7 +27,7 @@ With Coverage <br>
 ```pytest --cov-report term-missing --cov=api tests/``` <br>
 <br>
 Without Coverage <br>
-```pytest tests/ -v- ```
+```pytest tests/ -v ```
 
 ## App Info
 Authors:
