@@ -38,7 +38,7 @@ def register():
         upsert=True
     )
 
-    new_user = users.find_one({'_id' : user_id})
+    new_user = users.find_one({'email' : email})
 
     return jsonify({'result' : new_user['email'] + ' registered'})
 
