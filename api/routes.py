@@ -17,7 +17,7 @@ jwt = JWTManager(app)
 
 CORS(app)
 
-@app.route('/users/register', methods=['POST'])
+@app.route('/api/user-registration', methods=['POST'])
 def register():
     users = user_collection
     first_name = request.get_json()['first_name']
@@ -55,13 +55,37 @@ def register():
                 }
             })
 
-@app.route('/restaurants', methods=['GET'])
+@app.route('/api/user-login', methods=['POST'])
+def login():
+    users = user_collection
+    email = request.get_json()['email']
+    password = request.get_json()['password']
+    result = ''
+
+    response = users.find_one({'email' : email})
+
+    if response:
+        if bcrypt.check_password_hash(response['password'], password):
+            access_token = create_access_token(identity = {
+                'first_name' : response['first_name'],
+                'last_name' : response['last_name'],
+                'email' : response['email']
+            })
+            result = jsonify({'token' : access_token})
+        else:
+            result = jsonify({'error' : 'Invalid username and password'})
+    else: 
+        result = jsonify({'error' : 'No results found'})
+    return result
+
+
+@app.route('/api/restaurants', methods=['GET'])
 def get_all_restaurants():
     output = organize_restaurant_output()
 
     return jsonify({'result' : output})
 
-@app.route('/restaurant-recommendation', methods=['GET'])
+@app.route('/api/restaurant-recommendation', methods=['GET'])
 def get_restaurant_recommendation():
     output = organize_restaurant_output()
     selection = select_random_restaurant(output)
