@@ -29,7 +29,12 @@ def register():
     response = users.find_one({'email' : email})
 
     if response:
-        return "that email is taken"
+        return jsonify({
+            'result' : 
+                {
+                    'message' : 'Please choose another email, that email is taken.'
+                }
+            })
     else:
         users.insert(
             {
@@ -40,7 +45,15 @@ def register():
                 'created' : created
             })
         new_user = users.find_one({'email' : email})
-        return jsonify({'result' : new_user['email'] + ' registered'})
+        return jsonify({
+            'result' : 
+                {
+                    '_id' : str(new_user['_id']),
+                    'first_name' : new_user['first_name'],
+                    'last_name' : new_user['last_name'],
+                    'email' : new_user['email']
+                }
+            })
 
 @app.route('/restaurants', methods=['GET'])
 def get_all_restaurants():
