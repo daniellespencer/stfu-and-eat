@@ -68,8 +68,9 @@ describe("RestaurantList", () => {
             restaurant1, restaurant2
            ]}))
         const restaurantList = mount(<RestaurantList />)
-        jest.runAllTimers()   
         await flushPromises()
+        jest.runAllTimers()   
+        
         
         restaurantList.update()
         console.log(restaurantList.debug())
