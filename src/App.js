@@ -7,6 +7,12 @@ import About from './components/layout/About';
 
 import RestaurantList from './components/layout/RestaurantList';
 
+   // Auth Components and files
+   import Landing from './components/auth/Landing';
+   import Login from './components/auth/Login';
+   import Profile from './components/auth/Profile';
+   import Register from './components/auth/Register';
+
 
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,6 +29,12 @@ const App = () => {
           <Route exact path="/recommendation" component={ Recommendation } />
           <Route exact path="/restaurant-list" component={ RestaurantList } />
           <Route exact path="/about" component={ About } />
+
+           {/* Auth Components */}
+          <Route exact path="/landing" component={ Landing } />
+          <Route exact path="/login" component={ Login } />
+          <Route exact path="/register" component={ Register } />
+          <Route exact path="/profile" component={ Profile } />  
         </Switch>
       </section>
     </Fragment>
