@@ -28,12 +28,12 @@ const RestaurantList = () => {
             } )
         )
       }, [search, results]);
-
+      console.log(filteredRestaurants.length)
     return (
         <Fragment>
             <Jumbotron fluid className='listBanner' >
             <Container >
-                <h1>Our List</h1>
+                <h1> List</h1>
                
             </Container>
         </Jumbotron>
