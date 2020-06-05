@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecommendationItem renders restaurant recommendation 1`] = `
+<div>
+  <div
+    className="shadow mb-5 mt-5  card"
+  >
+    <img
+      className="card-img-top img-fluid"
+      src="rec-card-default.jpg"
+    />
+    <div
+      className="card-body"
+    >
+      <div
+        className="card-title h5"
+      >
+        Benton Park Cafe
+      </div>
+      <p
+        className="card-text"
+      >
+        Neighborhood: 
+        Benton Park
+         
+        <br />
+        Cuisine: 
+        American
+      </p>
+      <button
+        className="btn-success btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Restaurant website
+      </button>
+    </div>
+  </div>
+</div>
+`;
