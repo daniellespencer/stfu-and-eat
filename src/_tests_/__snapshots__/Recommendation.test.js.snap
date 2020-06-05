@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recommendation renders restaurant recommendation 1`] = `
+Array [
+  <div
+    className="jumbotron jumbotron-fluid"
+  >
+    <div
+      className="container"
+    >
+      <h1>
+        Our Recommendation
+      </h1>
+      <p>
+        We did it. We made a decision for you.
+      </p>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="shadow mb-5 mt-5  card"
+    >
+      <img
+        className="card-img-top img-fluid"
+        src="rec-card-default.jpg"
+      />
+      <div
+        className="card-body"
+      >
+        <div
+          className="card-title h5"
+        />
+        <p
+          className="card-text"
+        >
+          Neighborhood: 
+           
+          <br />
+          Cuisine: 
+        </p>
+        <button
+          className="btn-success btn btn-primary"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Restaurant website
+        </button>
+      </div>
+    </div>
+  </div>,
+]
+`;

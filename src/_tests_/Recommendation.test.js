@@ -1,12 +1,44 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
-import { shallow } from 'enzyme';
+import renderer, { act } from 'react-test-renderer';
+import { mount } from 'enzyme';
 import ReactDOM from 'react-dom';
 
 import Recommendation from '../components/layout/Recommendation';
 
-afterEach(cleanup);
+export const flushPromises = () => new Promise(setImmediate)
+const restaurant = {
+    "address": "2901 Salena St, St. Louis, MO 63118",
+    "cuisine": "American",
+    "id": "5ec1878e67e5bfad7604154f",
+    "name": "Benton Park Cafe",
+    "neighborhood": "Benton Park",
+    "website": "http://www.bentonparkcafe.com/"
+  }
 
-it("renders correctly", () => {
-    shallow(<Recommendation />);
-})
+describe("Recommendation", () => {
+    beforeEach(() => {jest.useFakeTimers()})
+    afterEach(() => {
+        jest.clearAllTimers()
+        cleanup()
+    });
+    // Set up
+    
+    // execution
+
+    // assertion
+    it("renders restaurant recommendation", async () => {
+        fetch.mockResponse(JSON.stringify({result: [
+         restaurant
+        ]}))
+        let restaurantRecommendation
+
+        await act( async () => {
+            restaurantRecommendation = renderer.create(<Recommendation restaurant={restaurant} />)
+            await flushPromises()
+        });
+        
+
+        expect(restaurantRecommendation.toJSON()).toMatchSnapshot()
+    });
+})    
