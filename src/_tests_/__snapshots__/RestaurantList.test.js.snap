@@ -18,6 +18,7 @@ Array [
   >
     <input
       className="form-control"
+      id="search-input"
       onChange={[Function]}
       placeholder="Search our list of restaurants ..."
       type="text"
@@ -122,6 +123,7 @@ Array [
   >
     <input
       className="form-control"
+      id="search-input"
       onChange={[Function]}
       placeholder="Search our list of restaurants ..."
       type="text"
