@@ -9,7 +9,7 @@ const RestaurantList = () => {
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     useEffect(() => {
-        fetch('restaurants', {
+        fetch('/api/restaurants', {
             headers: {
                 "Accept": 'application/json'
             }

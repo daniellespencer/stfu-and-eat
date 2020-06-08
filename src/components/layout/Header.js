@@ -1,56 +1,73 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
+import React, { Fragment, useContext } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
+import { AuthContext } from "../auth/context/authContext";
 
-import { useHistory } from "react-router";
+const Header = ({ title, icon }) => {
+  const authContext = useContext(AuthContext);
 
-const Header = () => {
-    const history = useHistory();
-    const logOut = e => {
-        e.preventDefault()
-        localStorage.removeItem('usertoken')
-        history.push('/')
+  const { isAuthenticated, logout, user } = authContext;
 
-    }
+  const onLogout = () => {
+    logout();
+  };
 
-    const loginRegLink = (
-        <ul>
-        
-        <li><Link to="/register">Register</Link></li>
-        <li><Link to="/login">Login</Link></li>
-      </ul>
-    );
+  const authLinks = (
+    <Fragment>
+      <li>Hello {user && user.name}</li>
+      <Nav.Link as={Link} to='recommendation'>
+        Recommendation
+      </Nav.Link>
+      <Nav.Link as={Link} to='restaurant-list'>
+        Restaurant List
+      </Nav.Link>
+      <Nav.Link as={Link} to='about'>
+        About
+      </Nav.Link>
+      <Nav.link as={Link} onClick={onLogout}>
+        <i className='fa fa-sign-out'></i>{" "}
+        <span className='hide-sm'>Logout</span>
+      </Nav.link>
+    </Fragment>
+  );
 
+  const guestLinks = (
+    <Fragment>
+      <Nav.Link as={Link} to='recommendation'>
+        Recommendation
+      </Nav.Link>
+      <Nav.Link as={Link} to='login'>
+        Login
+        {' '}<i className='fa fa-sign-in'></i>
+      </Nav.Link>
+    </Fragment>
+  );
 
-    const userLink = (
-        <ul>
-        <li><Link to="/restaurant-list">
-        Restaurant List</Link></li>
-        <li><Link to="/about">
-        About</Link></li>
-        
-        <li><a onClick={logOut} href="#!">
-            <i className="fa fa-sign-out"></i> {' '}
-            <span className='hide-sm'>Logout</span></a>
-        </li>
-        </ul>
-    )
-    return (
-        <Navbar bg="dark" variant='dark' expand="lg">
-        <Navbar.Brand as={Link} to="/">
-            <i className='fa fa-utensils'></i>{' '}
-            STFU&EAT</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-            <Nav.Link as={Link} to="recommendation">Recommendation</Nav.Link>
-            <Nav.Link as={Link} to="restaurant-list">Restaurant List</Nav.Link>
-            <Nav.Link as={Link} to="about">About</Nav.Link>
-            </Nav>
-        </Navbar.Collapse>
-        </Navbar>
+  return (
+    <Navbar bg='dark' variant='dark' expand='lg'>
+      <Navbar.Brand as={Link} to='/'>
+        <i className={icon}></i> {title}
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls='basic-navbar-nav' />
+      <Navbar.Collapse id='basic-navbar-nav'>
+        <Nav className='ml-auto'>
+          {/* add condition here? */}
+          {isAuthenticated ? authLinks : guestLinks}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+};
 
-    )
-}
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
+  icon: PropTypes.string,
+};
 
-export default Header
+Header.defaultProps = {
+  title: "STFU & EAT",
+  icon: "fa fa-utensils",
+};
+
+export default Header;
