@@ -35,7 +35,7 @@ const AuthState = props => {
     }
 
     try {
-      const res = await axios.get("api/user-registration");
+      const res = await axios.get("/api/user-login");
 
       dispatch({
         type: USER_LOADED,

@@ -20,25 +20,25 @@ const Register = (props) => {
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
     password2: "",
   });
 
-  const { name, email, password, password2 } = user;
+  const { username, email, password, password2 } = user;
 
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (name === "" || email === "" || password === "") {
+    if (username === "" || email === "" || password === "") {
       alert("Please enter all fields", "danger");
     } else if (password !== password2) {
       alert("Passwords do not match", "danger");
     } else {
       register({
-        name,
+        username,
         email,
         password,
       });
@@ -53,11 +53,11 @@ const Register = (props) => {
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='name'>Name</label>
+          <label htmlFor='username'>Username</label>
           <input
             type='text'
-            name='name'
-            value={name}
+            name='username'
+            value={username}
             onChange={onChange}
             required
           />
