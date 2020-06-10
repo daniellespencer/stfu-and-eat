@@ -15,8 +15,7 @@ jwt = JWTManager(app)
 
 @app.route('/api/user-registration', methods=['POST'])
 def register():
-    first_name = request.get_json()['first_name']
-    last_name = request.get_json()['last_name']
+    username = request.get_json()['username']
     email = request.get_json()['email']
     password = bcrypt.generate_password_hash(request.get_json()['password']).decode('utf-8')
     created = datetime.utcnow()
@@ -33,8 +32,7 @@ def register():
     else:
         users.insert(
             {
-                'first_name' : first_name,
-                'last_name' : last_name,
+                'username' : username,
                 'email' : email,
                 'password' : password,
                 'created' : created
@@ -46,8 +44,7 @@ def register():
             'result' : 
                 {
                     '_id' : str(new_user['_id']),
-                    'first_name' : new_user['first_name'],
-                    'last_name' : new_user['last_name'],
+                    'username' : new_user['username'],
                     'email' : new_user['email']
                 }
             })
@@ -63,8 +60,7 @@ def login():
     if response:
         if bcrypt.check_password_hash(response['password'], password):
             access_token = create_access_token(identity = {
-                'first_name' : response['first_name'],
-                'last_name' : response['last_name'],
+                'username' : response['username'],
                 'email' : response['email']
             })
             result = jsonify({'token' : access_token})
