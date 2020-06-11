@@ -28,25 +28,6 @@ const AuthState = props => {
 
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-  // Load User
-  const loadUser = async () => {
-    if (localStorage.token) {
-      setAuthToken(localStorage.token);
-    }
-
-    try {
-      // need to add form data/user email data to api
-      const res = await axios.post("/api/user-login", );
-
-      dispatch({
-        type: USER_LOADED,
-        payload: res.data,
-      });
-    } catch (err) {
-      dispatch({ type: AUTH_ERROR });
-    }
-  };
-
   // Register User
   const register = async (formData) => {
     const config = {
@@ -62,7 +43,7 @@ const AuthState = props => {
         payload: res.data
       });
 
-      loadUser();
+      await login(formData);
     } catch (err) {
       dispatch({
         type: REGISTER_FAIL
@@ -73,6 +54,9 @@ const AuthState = props => {
 
   // Login User
   const login = async (formData) => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +70,11 @@ const AuthState = props => {
         payload: res.data,
       });
 
-      loadUser();
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data,
+      });
+      
     } catch (err) {
       dispatch({
         type: LOGIN_FAIL,
@@ -114,7 +102,6 @@ const AuthState = props => {
         loading: state.loading,
         error: state.error,
         register,
-        loadUser,
         login,
         logout,
         clearErrors,
