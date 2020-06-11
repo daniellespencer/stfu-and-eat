@@ -25,10 +25,10 @@ const Header = ({ title, icon }) => {
       <Nav.Link as={Link} to='about'>
         About
       </Nav.Link>
-      <Nav.link as={Link} onClick={onLogout}>
+      <Nav.Link as={Link} onClick={onLogout} to='landing'>
         <i className='fa fa-sign-out'></i>{" "}
         <span className='hide-sm'>Logout</span>
-      </Nav.link>
+      </Nav.Link>
     </Fragment>
   );
 

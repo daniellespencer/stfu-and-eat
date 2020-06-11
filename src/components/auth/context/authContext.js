@@ -35,7 +35,8 @@ const AuthState = props => {
     }
 
     try {
-      const res = await axios.get("/api/user-login");
+      // need to add form data/user email data to api
+      const res = await axios.post("/api/user-login", );
 
       dispatch({
         type: USER_LOADED,
@@ -58,14 +59,14 @@ const AuthState = props => {
       const res = await axios.post("/api/user-registration", formData, config);
       dispatch({
         type: REGISTER_SUCCESS,
-        payload: res.data,
+        payload: res.data
       });
 
       loadUser();
     } catch (err) {
       dispatch({
-        type: REGISTER_FAIL,
-        payload: err.response.data.msg,
+        type: REGISTER_FAIL
+        // payload: err.res.data.msg,
       });
     }
   };
