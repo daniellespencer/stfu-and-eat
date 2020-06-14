@@ -1,5 +1,4 @@
 import random
-
 from api.config import restaurant_collection as restaurants
 
 def organize_restaurant_output():
