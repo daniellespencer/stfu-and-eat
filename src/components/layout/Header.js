@@ -15,7 +15,6 @@ const Header = ({ title, icon }) => {
 
   const authLinks = (
     <Fragment>
-      <li>Hello {user && user.name}</li>
       <Nav.Link as={Link} to='recommendation'>
         Recommendation
       </Nav.Link>
@@ -52,7 +51,6 @@ const Header = ({ title, icon }) => {
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='ml-auto'>
-          {/* add condition here? */}
           {isAuthenticated ? authLinks : guestLinks}
         </Nav>
       </Navbar.Collapse>

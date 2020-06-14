@@ -42,7 +42,6 @@ const Register = (props) => {
         email,
         password,
       });
-      console.log("register success");
     }
   };
 

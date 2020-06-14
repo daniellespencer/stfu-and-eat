@@ -7,7 +7,6 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   USER_LOADED,
-  AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
@@ -46,8 +45,8 @@ const AuthState = props => {
       await login(formData);
     } catch (err) {
       dispatch({
-        type: REGISTER_FAIL
-        // payload: err.res.data.msg,
+        type: REGISTER_FAIL,
+        payload: err.res.data.msg,
       });
     }
   };
