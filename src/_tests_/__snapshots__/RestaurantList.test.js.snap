@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RestaurantList renders multiple restaurants 1`] = `
+Array [
+  <div
+    className="listBanner jumbotron jumbotron-fluid"
+  >
+    <div
+      className="container"
+    >
+      <h1>
+         List
+      </h1>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <input
+      className="form-control"
+      id="search-input"
+      onChange={[Function]}
+      placeholder="Search our list of restaurants ..."
+      type="text"
+    />
+    <div
+      className="justify-content-sm-center row row-cols-md-3 row-cols-1"
+    >
+      <div>
+        <div
+          className="shadow mb-5 mt-5  card"
+        >
+          <img
+            className="card-img-top img-fluid"
+            src="rec-card-default.jpg"
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-title h5"
+            >
+              Benton Park Cafe
+            </div>
+            <p
+              className="card-text"
+            >
+              Neighborhood: 
+              Benton Park
+               
+              <br />
+              Cuisine: 
+              American
+            </p>
+            <button
+              className="btn-success btn btn-primary"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Restaurant website
+            </button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="shadow mb-5 mt-5  card"
+        >
+          <img
+            className="card-img-top img-fluid"
+            src="rec-card-default.jpg"
+          />
+          <div
+            className="card-body"
+          >
+            <div
+              className="card-title h5"
+            >
+              Kalbi Taco Shack
+            </div>
+            <p
+              className="card-text"
+            >
+              Neighborhood: 
+              Benton Park
+               
+              <br />
+              Cuisine: 
+              Asian Fusion
+            </p>
+            <button
+              className="btn-success btn btn-primary"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Restaurant website
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`RestaurantList renders no restaurants 1`] = `
+Array [
+  <div
+    className="listBanner jumbotron jumbotron-fluid"
+  >
+    <div
+      className="container"
+    >
+      <h1>
+         List
+      </h1>
+    </div>
+  </div>,
+  <div
+    className="container"
+  >
+    <input
+      className="form-control"
+      id="search-input"
+      onChange={[Function]}
+      placeholder="Search our list of restaurants ..."
+      type="text"
+    />
+    <div
+      className="justify-content-sm-center row row-cols-md-3 row-cols-1"
+    />
+  </div>,
+]
+`;

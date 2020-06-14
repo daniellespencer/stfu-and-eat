@@ -28,12 +28,12 @@ const RestaurantList = () => {
             } )
         )
       }, [search, results]);
-
+      
     return (
         <Fragment>
             <Jumbotron fluid className='listBanner' >
             <Container >
-                <h1>Our List</h1>
+                <h1> List</h1>
                
             </Container>
         </Jumbotron>
@@ -43,12 +43,13 @@ const RestaurantList = () => {
                 type="text"
                 placeholder="Search our list of restaurants ..."
                 className="form-control"
+                id='search-input'
                 onChange={e => setSearch(e.target.value)}
             /> 
            
             <Row className="justify-content-sm-center" md={3} xs={1}>
                 {filteredRestaurants.map(restaurant => (
-                    <RecommendationItem key={restaurant.id} restaurant={restaurant}  />
+                    <RecommendationItem id={restaurant.name} key={restaurant.id} restaurant={restaurant}  />
                 ))}
             </Row>
         </Container>
