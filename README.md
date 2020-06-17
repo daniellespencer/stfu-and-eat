@@ -20,7 +20,7 @@ Have more time? Feel free to browse through our full list of restaurants.
 ## Usage
 ```npm start``` <br>
 ```export PYTHONPATH=.``` <br>
-```api/routes.py``` <br>
+```run api/routes.py``` <br>
 
 ## Testing
 With Coverage <br>
