@@ -86,7 +86,7 @@ def get_restaurant_recommendation():
 
     return jsonify({'result' : selection})
 
-@app.route('/api/directions', methods=['GET'])
+@app.route('/api/directions/', methods=['GET'])
 def get_directions():
     response = requests.get('http://127.0.0.1:5000/api/restaurant-recommendation')
     address = response.json()['result']['address']
