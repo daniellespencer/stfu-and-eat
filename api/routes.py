@@ -86,10 +86,8 @@ def get_restaurant_recommendation():
 
     return jsonify({'result' : selection})
 
-@app.route('/api/directions/', methods=['GET'])
-def get_directions():
-    response = requests.get('http://127.0.0.1:5000/api/restaurant-recommendation')
-    address = response.json()['result']['address']
+@app.route('/api/directions/<address>', methods=['GET'])
+def get_directions(address):
 
     if ' ' in address:
         url_encoded_address = address.replace(' ', '+')
