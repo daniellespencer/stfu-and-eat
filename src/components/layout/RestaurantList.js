@@ -46,7 +46,7 @@ const RestaurantList = () => {
     <Fragment>
       <Jumbotron fluid className='listBanner'>
         <Container>
-          <h1> List</h1>
+          <h1>Our List</h1>
         </Container>
       </Jumbotron>
 
