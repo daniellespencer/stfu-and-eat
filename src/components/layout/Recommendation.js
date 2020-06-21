@@ -8,7 +8,7 @@ const Recommendation = (props) => {
     // eslint-disable-next-line
     
     useEffect(() => {
-        fetch('restaurant-recommendation', {
+        fetch('/api/restaurant-recommendation', {
             headers: {
                 "Accept": 'application/json'
             }
