@@ -95,7 +95,7 @@ def get_directions(address):
 
         return link
 
-    return jsonify(link)
+    return jsonify(link) 
 
 
 if __name__ == '__main__':
