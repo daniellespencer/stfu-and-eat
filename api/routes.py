@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, request, json
 from datetime import datetime
+import requests
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended import (create_access_token)
 from api.restaurant_helper_functions import organize_restaurant_output, select_random_restaurant
 from api.config import user_collection as users
+from api.config import restaurant_collection as restaurant
 
 app = Flask(__name__)
 
@@ -83,6 +85,18 @@ def get_restaurant_recommendation():
     selection = select_random_restaurant(output)
 
     return jsonify({'result' : selection})
+
+@app.route('/api/directions/<address>', methods=['GET'])
+def get_directions(address):
+
+    if ' ' in address:
+        url_encoded_address = address.replace(' ', '+')
+        link = "https://www.google.com/maps/dir//" + url_encoded_address
+
+        return link
+
+    return jsonify(link) 
+
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'
