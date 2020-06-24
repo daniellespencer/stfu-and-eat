@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, findAllByText, getAllByText } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
 import App from './App';
