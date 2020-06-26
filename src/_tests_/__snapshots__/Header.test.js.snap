@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Renders Header Component 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-dark bg-dark"
+>
+  <a
+    className="navbar-brand"
+    href="/"
+    onClick={[Function]}
+  >
+    <i
+      className="fa fa-utensils"
+    />
+     
+    STFU & EAT
+  </a>
+  <button
+    aria-controls="basic-navbar-nav"
+    aria-label="Toggle navigation"
+    className="navbar-toggler collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    aria-expanded={null}
+    className="navbar-collapse collapse"
+    id="basic-navbar-nav"
+  >
+    <div
+      className="ml-auto navbar-nav"
+      onKeyDown={[Function]}
+    >
+      <a
+        className="nav-link"
+        data-rb-event-key={null}
+        disabled={false}
+        href="/recommendation"
+        onClick={[Function]}
+      >
+        Recommendation
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key={null}
+        disabled={false}
+        href="/restaurant-list"
+        onClick={[Function]}
+      >
+        Restaurant List
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key={null}
+        disabled={false}
+        href="/about"
+        onClick={[Function]}
+      >
+        About
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key={null}
+        disabled={false}
+        href="/landing"
+        onClick={[Function]}
+      >
+        <i
+          className="fa fa-sign-out"
+        />
+         
+        <span
+          className="hide-sm"
+        >
+          Logout
+        </span>
+      </a>
+    </div>
+  </div>
+</nav>
+`;

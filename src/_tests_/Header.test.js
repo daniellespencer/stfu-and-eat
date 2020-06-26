@@ -2,13 +2,14 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import {MemoryRouter} from 'react-router-dom';
-
+import * as authContext from "../components/auth/context/authContext";
+import Header from '../components/layout/Header';
 
 
 import ReactDOM from 'react-dom';
 
-import Header from '../components/layout/Header';
-import { AuthContext, AuthProvider } from "../components/auth/context/authContext";
+jest.mock("../components/auth/context/authContext")
+
 
 describe("Header", () => {
     beforeEach(() => {
@@ -20,8 +21,8 @@ describe("Header", () => {
       });
     
     it("Renders Header Component", () =>{
-        const {isAuthenticated} = true
-        const headerComponent = renderer.create(<MemoryRouter><Header value={isAuthenticated}  /></MemoryRouter>)
+        authContext.useAuthContext.mockReturnValue({isAuthenticated: true, logout: jest.fn()})
+        const headerComponent = renderer.create(<MemoryRouter><Header /></MemoryRouter>)
 
         expect(headerComponent.toJSON()).toMatchSnapshot()
 

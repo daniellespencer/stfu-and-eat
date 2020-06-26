@@ -2,10 +2,11 @@ import React, { Fragment, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
-import { AuthContext } from "../auth/context/authContext";
+import { useAuthContext } from "../auth/context/authContext";
 
 const Header = ({ title, icon }) => {
-  const authContext = useContext(AuthContext);
+  const authContext = useAuthContext();
+  
 
   const { isAuthenticated, logout } = authContext;
 
