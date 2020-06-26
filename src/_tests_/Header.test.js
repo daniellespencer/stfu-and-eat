@@ -20,14 +20,17 @@ describe("Header", () => {
         
       });
     
-    it("Renders Header Component", () =>{
+    it("Renders Header with user links when authenticated", () =>{
         authContext.useAuthContext.mockReturnValue({isAuthenticated: true, logout: jest.fn()})
         const headerComponent = renderer.create(<MemoryRouter><Header /></MemoryRouter>)
 
         expect(headerComponent.toJSON()).toMatchSnapshot()
+    })
 
-        screen.debug()
+    it("Renders Header with user links when unauthenticated", () =>{
+        authContext.useAuthContext.mockReturnValue({isAuthenticated: false, logout: jest.fn()})
+        const headerComponent = renderer.create(<MemoryRouter><Header /></MemoryRouter>)
 
-
+        expect(headerComponent.toJSON()).toMatchSnapshot()
     })
 })
