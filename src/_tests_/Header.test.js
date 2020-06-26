@@ -1,13 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 import {MemoryRouter} from 'react-router-dom';
-import { StateMock } from '@react-mock/state';
+
 
 
 import ReactDOM from 'react-dom';
 
 import Header from '../components/layout/Header';
-import { AuthContext } from "../components/auth/context/authContext";
+import { AuthContext, AuthProvider } from "../components/auth/context/authContext";
 
 describe("Header", () => {
     beforeEach(() => {
@@ -18,10 +19,14 @@ describe("Header", () => {
         
       });
     
-    it("Renders Header", () =>{
-        
-        render(<StateMock state = {{ isAuthenticated: true }}><Header /></StateMock>)
+    it("Renders Header Component", () =>{
+        const {isAuthenticated} = true
+        const headerComponent = renderer.create(<MemoryRouter><Header value={isAuthenticated}  /></MemoryRouter>)
+
+        expect(headerComponent.toJSON()).toMatchSnapshot()
 
         screen.debug()
+
+
     })
 })
