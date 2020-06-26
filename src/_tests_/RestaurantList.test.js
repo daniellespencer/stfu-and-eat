@@ -71,7 +71,7 @@ describe("RestaurantList", () => {
     restaurantList
       .find("input")
       .at(0)
-      .simulate("change", { target: {  value: "Benton" } });
+      .simulate("change", { target: {  value: "Benton Park Cafe" } });
     // Update Component
     restaurantList.update();
     // console.log(restaurantList.debug());

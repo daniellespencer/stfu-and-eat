@@ -1,12 +1,27 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import {MemoryRouter} from 'react-router-dom';
+import { StateMock } from '@react-mock/state';
+
+
 import ReactDOM from 'react-dom';
 
 import Header from '../components/layout/Header';
+import { AuthContext } from "../components/auth/context/authContext";
 
-afterEach(cleanup);
+describe("Header", () => {
+    beforeEach(() => {
+        jest.useFakeTimers();
+      });
+      afterEach(() => {
+        jest.clearAllTimers();
+        
+      });
+    
+    it("Renders Header", () =>{
+        
+        render(<StateMock state = {{ isAuthenticated: true }}><Header /></StateMock>)
 
-it("renders correctly", () => {
-    shallow(<Header />);
+        screen.debug()
+    })
 })

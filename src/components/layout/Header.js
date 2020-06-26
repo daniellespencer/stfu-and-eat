@@ -7,7 +7,7 @@ import { AuthContext } from "../auth/context/authContext";
 const Header = ({ title, icon }) => {
   const authContext = useContext(AuthContext);
 
-  const { isAuthenticated, logout, user } = authContext;
+  const { isAuthenticated, logout } = authContext;
 
   const onLogout = () => {
     logout();
