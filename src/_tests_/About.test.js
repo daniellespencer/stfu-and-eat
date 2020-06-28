@@ -1,12 +1,15 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
 
 import About from '../components/layout/About';
 
-afterEach(cleanup);
+describe("About", () => {
+    it("renders correctly", () => {
+        render(<About />);
 
-it("renders correctly", () => {
-    shallow(<About />);
+        expect(screen.getByText("About Our App")).toBeInTheDocument();
+    })
 })
+

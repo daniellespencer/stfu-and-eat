@@ -1,19 +1,24 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import {MemoryRouter} from 'react-router-dom';
 import { shallow } from 'enzyme';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-afterEach(cleanup);
+describe("App Test", () => {
+  
+  it("App renders", () =>{
+    render(<MemoryRouter><App /></MemoryRouter>)
+  })
+})
+
+
 
 it('renders without crashing', () => {
   shallow(<App />);
 });
 
-test('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<App />, div)
-});
+
 
 // it('renders welcome message', () => {
 //   const wrapper = shallow(<App />);
@@ -22,7 +27,4 @@ test('renders without crashing', () => {
 //   expect(wrapper.contains(welcome)).toEqual(true);
 // });
 
-it('renders welcome message', () => {
-  const { getByText } = render(<App />);
-  expect(getByText('STFU & EAT')).toBeInTheDocument();
-});
+
