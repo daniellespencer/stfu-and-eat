@@ -15,6 +15,7 @@ bcrypt = "*"
 flask-cors = "*"
 flask-bcrypt = "*"
 flask-jwt-extended = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
