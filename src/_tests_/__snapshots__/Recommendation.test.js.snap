@@ -39,12 +39,20 @@ Array [
           Cuisine: 
         </p>
         <button
-          className="btn-success btn btn-primary"
+          className="btn-success btn-sm rec-item-button btn btn-primary"
           disabled={false}
           onClick={[Function]}
           type="button"
         >
           Restaurant website
+        </button>
+        <button
+          className="btn-sm rec-item-button btn btn-outline-success"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Directions
         </button>
       </div>
     </div>
