@@ -47,7 +47,7 @@ const Header = ({ title, icon }) => {
   return (
     <Navbar bg='dark' variant='dark' expand='lg'>
       <Navbar.Brand as={Link} to='/'>
-        <i className={icon}></i> {title}
+       <i className={icon}></i> {title}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
@@ -66,7 +66,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   title: "STFU & EAT",
-  icon: "fa fa-utensils",
+  icon: "far fa-comment-alt",
 };
 
 export default Header;

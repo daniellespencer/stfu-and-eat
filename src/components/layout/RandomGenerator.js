@@ -12,7 +12,7 @@ const RandomGenerator = () => {
                     Hit the "Let's Eat!" button and your culinary journey begins
                 </p>
                 <div className="buttons">
-                    <Link to="/recommendation" className="btn btn-success btn-lg">
+                    <Link to="/recommendation" className="btn btn-primary btn-lg">
                         LET'S EAT
                         {' '}<i className='fa fa-utensils'></i>
                     </Link>

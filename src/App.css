@@ -152,6 +152,24 @@ img {
 .rec-item-button {
   display: inline-flex;
   margin-right: 9px;
+  background-color: #14b5d0;
+  border: 0px;
+}
+
+.rec-item-button-directions {
+  border: 1px solid #14b5d0;
+  color: #14b5d0;
+}
+
+.rec-item-button-directions:hover, .rec-item-button:visited, .rec-item-button-directions:active {
+  border: 1px solid #14b5d0 !important;
+  color: #fff !important;
+  background-color: #14b5d0 !important;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #14b5d0 !important;
+  border: 1px solid #14b5d0 !important;
 }
 
 /* Overlay */
@@ -181,12 +199,13 @@ img {
 .lead {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #333;
+  
  
 }
 
 .about-blurb {
   margin-bottom: 50px;
+  color: #333;
 }
 
 .text-center {
@@ -279,6 +298,7 @@ h3 {
 }
 .media {
   font-family: "Roboto", sans-serif;
+  color: #333;
 }
 
 /* Small devices (tablets, 768px and up) */
