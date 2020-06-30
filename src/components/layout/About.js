@@ -35,7 +35,7 @@ const About = () => {
                 alt='Generic placeholder'
               />
               <Media.Body>
-                <h5>Mariah Lightfoot</h5>
+                <h5>Mariah Lightfoot | Backend Developer</h5>
                 <p>
                   Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
                   scelerisque ante sollicitudin commodo. Cras purus odio,
@@ -56,7 +56,7 @@ const About = () => {
                 alt='Generic placeholder'
               />
               <Media.Body>
-                <h5>Danielle Spencer</h5>
+                <h5>Danielle Spencer | Frontend Developer</h5>
                 <p>
                   Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
                   scelerisque ante sollicitudin commodo. Cras purus odio,
