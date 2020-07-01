@@ -7,7 +7,7 @@ exports[`RecommendationItem renders restaurant recommendation 1`] = `
   >
     <img
       className="card-img-top img-fluid"
-      src="rec-card-default.jpg"
+      src="logo.jpg"
     />
     <div
       className="card-body"
@@ -28,7 +28,7 @@ exports[`RecommendationItem renders restaurant recommendation 1`] = `
         American
       </p>
       <button
-        className="btn-success btn-sm rec-item-button btn btn-primary"
+        className="btn-primary btn-sm rec-item-button btn btn-primary"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -36,7 +36,7 @@ exports[`RecommendationItem renders restaurant recommendation 1`] = `
         Restaurant website
       </button>
       <button
-        className="btn-sm rec-item-button btn btn-outline-success"
+        className="btn-sm rec-item-button-directions btn btn-outline-primary"
         disabled={false}
         onClick={[Function]}
         type="button"

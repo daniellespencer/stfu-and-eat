@@ -10,7 +10,7 @@ exports[`Header Renders Header with user links when authenticated 1`] = `
     onClick={[Function]}
   >
     <i
-      className="fa fa-utensils"
+      className="far fa-comment-alt"
     />
      
     STFU & EAT
@@ -94,7 +94,7 @@ exports[`Header Renders Header with user links when unauthenticated 1`] = `
     onClick={[Function]}
   >
     <i
-      className="fa fa-utensils"
+      className="far fa-comment-alt"
     />
      
     STFU & EAT
