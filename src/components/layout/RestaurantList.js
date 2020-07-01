@@ -54,7 +54,7 @@ const RestaurantList = () => {
         <input
           type='text'
           placeholder='Search our list of restaurants ...'
-          className='form-control'
+          className='form-control search-input'
           id='search-input'
           onChange={(e) => setSearch(e.target.value)}
         />

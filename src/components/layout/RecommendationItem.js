@@ -15,10 +15,10 @@ const RecommendationItem = ({ restaurant }) => {
 
   return (
     <div>
-      <Card className='shadow mb-5 mt-5 '>
+      <Card className='shadow mb-5 mt-10 '>
         <Card.Img
           variant='top'
-          src={require("../../images/rec-card-default.jpg")}
+          src={require("../../images/logo.jpg")}
           className='img-fluid'
         />
         <Card.Body>
@@ -29,14 +29,14 @@ const RecommendationItem = ({ restaurant }) => {
           </Card.Text>
           <Button
             variant='primary'
-            className='btn-success btn-sm rec-item-button'
+            className='btn-primary btn-sm rec-item-button'
             onClick={onClick}
           >
             Restaurant website
           </Button>
           <Button
-            variant='outline-success'
-            className='btn-sm rec-item-button'
+            variant='outline-primary'
+            className='btn-sm rec-item-button-directions'
             onClick={onClickDirections}
           >
             Directions

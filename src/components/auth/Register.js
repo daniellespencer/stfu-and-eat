@@ -48,7 +48,7 @@ const Register = (props) => {
   return (
     <div className='form-container'>
       <h1>
-        Account <span className='text-success'>Register</span>
+        Account <span className='text-register-title'>Register</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
@@ -96,7 +96,7 @@ const Register = (props) => {
         <input
           type='submit'
           value='Register'
-          className='btn btn-success btn-block'
+          className='btn btn-primary btn-block'
         />
       </form>
       <p className='my-1'>
