@@ -15,7 +15,7 @@ const RecommendationItem = ({ restaurant }) => {
 
   return (
     <div>
-      <Card className='shadow mb-5 mt-5 '>
+      <Card className='shadow mb-5 mt-10 '>
         <Card.Img
           variant='top'
           src={require("../../images/logo.jpg")}

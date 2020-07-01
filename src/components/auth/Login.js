@@ -43,7 +43,7 @@ const Login = (props) => {
   return (
     <div className='form-container'>
       <h1>
-        Account <span className='text-success'>Login</span>
+        Account <span className='text-login-title'>Login</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
@@ -69,7 +69,7 @@ const Login = (props) => {
         <input
           type='submit'
           value='Login'
-          className='btn btn-success btn-block'
+          className='btn btn-primary btn-block'
         />
       </form>
       <p className='my-1'>
