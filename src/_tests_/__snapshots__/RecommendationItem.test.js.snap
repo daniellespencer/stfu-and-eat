@@ -3,7 +3,7 @@
 exports[`RecommendationItem renders restaurant recommendation 1`] = `
 <div>
   <div
-    className="shadow mb-5 mt-5  card"
+    className="shadow mb-5 mt-10  card"
   >
     <img
       className="card-img-top img-fluid"
